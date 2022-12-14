@@ -1,0 +1,15 @@
+# ninja log v5
+9	80	6926308345554174	CMakeFiles/prg1.dir/terrain.cpp.obj	e7358ed38815f375
+5	90	6926308345644181	CMakeFiles/prg1.dir/robot.cpp.obj	ed000144262829da
+3	401	6926308954578575	CMakeFiles/prg1.dir/main.cpp.obj	479a5f003b753986
+8	382	6926308954378552	CMakeFiles/prg1.dir/userInterface.cpp.obj	627baa80abc5d4b4
+17	609	6926308350854213	CMakeFiles/prg1.dir/annex.cpp.obj	ab5b480eabd1bc19
+4	384	6926309501633003	CMakeFiles/prg1.dir/main.cpp.obj	479a5f003b753986
+385	506	6926309502813325	prg1.exe	6394b3da77ccbb3d
+8	389	6926311391345182	CMakeFiles/prg1.dir/userInterface.cpp.obj	627baa80abc5d4b4
+3	401	6926311391465226	CMakeFiles/prg1.dir/main.cpp.obj	479a5f003b753986
+406	542	6926311392835224	prg1.exe	6394b3da77ccbb3d
+3	426	6926312428757910	CMakeFiles/prg1.dir/userInterface.cpp.obj	627baa80abc5d4b4
+427	562	6926312430067895	prg1.exe	6394b3da77ccbb3d
+4	400	6926312649992735	CMakeFiles/prg1.dir/userInterface.cpp.obj	627baa80abc5d4b4
+401	527	6926312651223081	prg1.exe	6394b3da77ccbb3d
