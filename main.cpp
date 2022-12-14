@@ -7,16 +7,7 @@
 
 using namespace std;
 
-vector<robot> createNumberOfRobots(const unsigned numberOfRobots)
-{
-    vector<robot> list;
-    for(unsigned i = 0; i< numberOfRobots; ++i)
-    {
-        robot bot;
-        list.push_back(bot);
-    }
-    return list;
-}
+
 int main() {
 
     const int widthMin   = 10,
@@ -35,11 +26,10 @@ int main() {
     unsigned height = userInput(heightMin,heightMax,sHeight);
     unsigned numberOfRobots = userInput(nbRobotMin,nbRobotMax,sNbRobot);
 
-    vector<robot> listOfRobots = createNumberOfRobots(numberOfRobots);
 
     terrain terrain(width,height);
-    battleRoyal battle(terrain,listOfRobots);
-    if(battle.startgame()){
+    battleRoyal battle(terrain);
+    if(battle.startGame(numberOfRobots)){
 
     }
 

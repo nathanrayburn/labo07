@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/natha/Documents/HEIG-VD/labo07/cmake-build-debug",
-		"source" : "C:/Users/natha/Documents/HEIG-VD/labo07"
+		"build" : "P:/HEIG/labo07/cmake-build-debug",
+		"source" : "P:/HEIG/labo07"
 	},
 	"version" : 
 	{

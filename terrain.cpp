@@ -4,13 +4,17 @@
 
 #include "terrain.h"
 
+terrain::terrain() {
+    _length = 10;
+    _height = 10;
+}
 terrain::terrain(unsigned int length, unsigned int height) {
-    this->length = length;
-    this->height = height;
+    _length = length;
+    _height = height;
 }
 unsigned terrain::getLength() const {
-    return this->length;
+    return _length;
 }
 unsigned terrain::getHeight() const {
-    return this->height;
+    return _height;
 }

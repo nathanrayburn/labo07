@@ -10,11 +10,21 @@
 
 class battleRoyal {
 public:
-    battleRoyal(terrain t, vector<robot> robots);
-    bool startgame();
+    // constructors
+     explicit battleRoyal(terrain t);
+
+    // methods
+    bool startGame(unsigned numberOfRobots);
 private:
-    terrain t;
-    vector<robot> robots;
+    // attributes
+    terrain _t;
+    vector<robot> _robots;
+
+    // methods
+    void messageLog();
+    void displayGame();
+    void placeRobotsInGame();
+    void createNumberOfRobots(unsigned numberOfRobots);
 };
 
 

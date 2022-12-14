@@ -11,13 +11,14 @@ using namespace std;
 
 class terrain {
 public:
+    terrain();
     terrain(unsigned length, unsigned height);
     unsigned getLength() const;
     unsigned getHeight() const;
 
 private:
-    unsigned length;
-    unsigned height;
+    unsigned _length;
+    unsigned _height;
 
 };
 

@@ -18,8 +18,9 @@ class robot{
 public :
 
     // constructors
-    robot();
+    robot(const unsigned id);
     robot(unsigned id, unsigned x, unsigned y);
+
     // accessors
 
     // getter
@@ -27,12 +28,19 @@ public :
     unsigned getPositionY() const;
     unsigned getID() const;
 
+    // setter
+    void setPositionX(const unsigned x);
+    void setPositionY(const unsigned y);
+
+    //methods
+    void move(terrain& t);
 
 
 private :
-    unsigned x;
-    unsigned y;
-    unsigned id;
+
+    unsigned _x;
+    unsigned _y;
+    unsigned _id;
 
     //accessors
 
