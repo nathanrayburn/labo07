@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = C$:/Users/natha/Documents/HEIG-VD/prg1/Labo$ 7/cmake-build-debug/
+cmake_ninja_workdir = C$:/Users/natha/Documents/HEIG-VD/labo07/cmake-build-debug/
 # =============================================================================
 # Object build statements for EXECUTABLE target prg1
 
@@ -49,32 +49,38 @@ cmake_ninja_workdir = C$:/Users/natha/Documents/HEIG-VD/prg1/Labo$ 7/cmake-build
 
 build cmake_object_order_depends_target_prg1: phony || CMakeFiles/prg1.dir
 
-build CMakeFiles/prg1.dir/main.cpp.obj: CXX_COMPILER__prg1_Debug C$:/Users/natha/Documents/HEIG-VD/prg1/Labo$ 7/main.cpp || cmake_object_order_depends_target_prg1
+build CMakeFiles/prg1.dir/main.cpp.obj: CXX_COMPILER__prg1_Debug C$:/Users/natha/Documents/HEIG-VD/labo07/main.cpp || cmake_object_order_depends_target_prg1
   DEP_FILE = CMakeFiles\prg1.dir\main.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\prg1.dir
   OBJECT_FILE_DIR = CMakeFiles\prg1.dir
 
-build CMakeFiles/prg1.dir/robot.cpp.obj: CXX_COMPILER__prg1_Debug C$:/Users/natha/Documents/HEIG-VD/prg1/Labo$ 7/robot.cpp || cmake_object_order_depends_target_prg1
+build CMakeFiles/prg1.dir/robot.cpp.obj: CXX_COMPILER__prg1_Debug C$:/Users/natha/Documents/HEIG-VD/labo07/robot.cpp || cmake_object_order_depends_target_prg1
   DEP_FILE = CMakeFiles\prg1.dir\robot.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\prg1.dir
   OBJECT_FILE_DIR = CMakeFiles\prg1.dir
 
-build CMakeFiles/prg1.dir/terrain.cpp.obj: CXX_COMPILER__prg1_Debug C$:/Users/natha/Documents/HEIG-VD/prg1/Labo$ 7/terrain.cpp || cmake_object_order_depends_target_prg1
+build CMakeFiles/prg1.dir/terrain.cpp.obj: CXX_COMPILER__prg1_Debug C$:/Users/natha/Documents/HEIG-VD/labo07/terrain.cpp || cmake_object_order_depends_target_prg1
   DEP_FILE = CMakeFiles\prg1.dir\terrain.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\prg1.dir
   OBJECT_FILE_DIR = CMakeFiles\prg1.dir
 
-build CMakeFiles/prg1.dir/userInterface.cpp.obj: CXX_COMPILER__prg1_Debug C$:/Users/natha/Documents/HEIG-VD/prg1/Labo$ 7/userInterface.cpp || cmake_object_order_depends_target_prg1
+build CMakeFiles/prg1.dir/userInterface.cpp.obj: CXX_COMPILER__prg1_Debug C$:/Users/natha/Documents/HEIG-VD/labo07/userInterface.cpp || cmake_object_order_depends_target_prg1
   DEP_FILE = CMakeFiles\prg1.dir\userInterface.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\prg1.dir
   OBJECT_FILE_DIR = CMakeFiles\prg1.dir
 
-build CMakeFiles/prg1.dir/annex.cpp.obj: CXX_COMPILER__prg1_Debug C$:/Users/natha/Documents/HEIG-VD/prg1/Labo$ 7/annex.cpp || cmake_object_order_depends_target_prg1
+build CMakeFiles/prg1.dir/annex.cpp.obj: CXX_COMPILER__prg1_Debug C$:/Users/natha/Documents/HEIG-VD/labo07/annex.cpp || cmake_object_order_depends_target_prg1
   DEP_FILE = CMakeFiles\prg1.dir\annex.cpp.obj.d
+  FLAGS = -g -std=gnu++14
+  OBJECT_DIR = CMakeFiles\prg1.dir
+  OBJECT_FILE_DIR = CMakeFiles\prg1.dir
+
+build CMakeFiles/prg1.dir/battleRoyal.cpp.obj: CXX_COMPILER__prg1_Debug C$:/Users/natha/Documents/HEIG-VD/labo07/battleRoyal.cpp || cmake_object_order_depends_target_prg1
+  DEP_FILE = CMakeFiles\prg1.dir\battleRoyal.cpp.obj.d
   FLAGS = -g -std=gnu++14
   OBJECT_DIR = CMakeFiles\prg1.dir
   OBJECT_FILE_DIR = CMakeFiles\prg1.dir
@@ -87,7 +93,7 @@ build CMakeFiles/prg1.dir/annex.cpp.obj: CXX_COMPILER__prg1_Debug C$:/Users/nath
 #############################################
 # Link the executable prg1.exe
 
-build prg1.exe: CXX_EXECUTABLE_LINKER__prg1_Debug CMakeFiles/prg1.dir/main.cpp.obj CMakeFiles/prg1.dir/robot.cpp.obj CMakeFiles/prg1.dir/terrain.cpp.obj CMakeFiles/prg1.dir/userInterface.cpp.obj CMakeFiles/prg1.dir/annex.cpp.obj
+build prg1.exe: CXX_EXECUTABLE_LINKER__prg1_Debug CMakeFiles/prg1.dir/main.cpp.obj CMakeFiles/prg1.dir/robot.cpp.obj CMakeFiles/prg1.dir/terrain.cpp.obj CMakeFiles/prg1.dir/userInterface.cpp.obj CMakeFiles/prg1.dir/annex.cpp.obj CMakeFiles/prg1.dir/battleRoyal.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\prg1.dir
@@ -102,7 +108,7 @@ build prg1.exe: CXX_EXECUTABLE_LINKER__prg1_Debug CMakeFiles/prg1.dir/main.cpp.o
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D "C:\Users\natha\Documents\HEIG-VD\prg1\Labo 7\cmake-build-debug" && "C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D C:\Users\natha\Documents\HEIG-VD\labo07\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -113,7 +119,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D "C:\Users\natha\Documents\HEIG-VD\prg1\Labo 7\cmake-build-debug" && "C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -S"C:\Users\natha\Documents\HEIG-VD\prg1\Labo 7" -B"C:\Users\natha\Documents\HEIG-VD\prg1\Labo 7\cmake-build-debug""
+  COMMAND = cmd.exe /C "cd /D C:\Users\natha\Documents\HEIG-VD\labo07\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2022.2.3\bin\cmake\win\bin\cmake.exe" --regenerate-during-build -SC:\Users\natha\Documents\HEIG-VD\labo07 -BC:\Users\natha\Documents\HEIG-VD\labo07\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -131,7 +137,7 @@ build prg1: phony prg1.exe
 # =============================================================================
 
 #############################################
-# Folder: C:/Users/natha/Documents/HEIG-VD/prg1/Labo 7/cmake-build-debug
+# Folder: C:/Users/natha/Documents/HEIG-VD/labo07/cmake-build-debug
 
 build all: phony prg1.exe
 

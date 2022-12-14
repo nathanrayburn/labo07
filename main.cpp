@@ -2,33 +2,47 @@
 #include <vector>
 #include "robot.h"
 #include "userInterface.h"
-#include "annex.h"
 #include "terrain.h"
+#include "battleRoyal.h"
+
 using namespace std;
-vector<Robot> createNumberOfRobots(const unsigned numberOfRobots)
+
+vector<robot> createNumberOfRobots(const unsigned numberOfRobots)
 {
-    vector<Robot> list;
-    for(unsigned i = 0; i<= numberOfRobots; ++i)
+    vector<robot> list;
+    for(unsigned i = 0; i< numberOfRobots; ++i)
     {
-        Robot bot;
+        robot bot;
         list.push_back(bot);
     }
     return list;
 }
 int main() {
 
-    string sLength  = "largeur     [10..1000] : ";
+    const int widthMin   = 10,
+              widthMax   = 1000,
+              heightMin  = 10,
+              heightMax  = 1000,
+
+              nbRobotMin = 1,
+              nbRobotMax = 10;
+
+    string sWidth   = "largeur     [10..1000] : ";
     string sHeight  = "hauteur     [10..1000] : ";
-    string sNb      = "nbre object     [0..9] : ";
+    string sNbRobot = "nbre object     [1..10] : ";
 
-    unsigned width = userInput(10,1000,sLength);
-    unsigned length = userInput(10,1000,sHeight);
-    unsigned numberOfRobots = userInput(1,10,sNb);
+    unsigned width = userInput(widthMin,widthMax,sWidth);
+    unsigned height = userInput(heightMin,heightMax,sHeight);
+    unsigned numberOfRobots = userInput(nbRobotMin,nbRobotMax,sNbRobot);
 
-    Terrain terrain;
-    terrain.define(width,length);
-    vector<Robot> listOfRobots = createNumberOfRobots(numberOfRobots);
-    Robot test;
+    vector<robot> listOfRobots = createNumberOfRobots(numberOfRobots);
+
+    terrain terrain(width,height);
+    battleRoyal battle(terrain,listOfRobots);
+    if(battle.startgame()){
+
+    }
+
 
     return 0;
 }

@@ -27,8 +27,7 @@ public :
     unsigned getPositionY() const;
     unsigned getID() const;
 
-    // methods
-    void move(terrain& t);
+
 
 private :
     unsigned x;
