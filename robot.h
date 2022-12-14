@@ -33,7 +33,7 @@ public :
     void setPositionY(const unsigned y);
 
     //methods
-    void move(terrain& t);
+   // void move(const terrain& t);
 
 
 private :

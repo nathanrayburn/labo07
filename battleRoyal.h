@@ -25,6 +25,7 @@ private:
     void displayGame();
     void placeRobotsInGame();
     void createNumberOfRobots(unsigned numberOfRobots);
+    void killRobot();
 };
 
 

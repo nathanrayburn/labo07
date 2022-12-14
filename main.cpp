@@ -29,6 +29,7 @@ int main() {
 
     terrain terrain(width,height);
     battleRoyal battle(terrain);
+
     if(battle.startGame(numberOfRobots)){
 
     }

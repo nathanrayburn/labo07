@@ -8,9 +8,11 @@ battleRoyal::battleRoyal(terrain t) {
     this->_t = t;
 }
 bool battleRoyal::startGame(unsigned numberOfRobots) {
+
     if(!numberOfRobots) return false;
     createNumberOfRobots(numberOfRobots);
     placeRobotsInGame();
+
     return true;
 }
 
@@ -32,4 +34,7 @@ void battleRoyal::createNumberOfRobots(const unsigned numberOfRobots) {
         robot bot(i);
         this->_robots.push_back(bot);
     }
+}
+void battleRoyal::killRobot() {
+
 }

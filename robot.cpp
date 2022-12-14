@@ -14,10 +14,10 @@ robot::robot(unsigned id, unsigned x, unsigned y) {
     _x = x;
     _y = y;
 }
-void robot::move(terrain& t)
+/*void robot::move(const terrain& t)
 {
 
-}
+} */
 unsigned robot::getID() const {
     return _id;
 }
