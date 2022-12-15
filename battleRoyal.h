@@ -15,7 +15,7 @@
 #ifndef PRG1_BATTLEROYAL_H
 #define PRG1_BATTLEROYAL_H
 
-#include "terrain.h"
+#include "Terrain.h"
 #include "Robot.h"
 #include "annex.h"
 #include <string>

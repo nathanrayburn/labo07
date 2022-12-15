@@ -1,5 +1,5 @@
 CMakeFiles/prg1.dir/battleRoyal.cpp.obj: P:\HEIG\labo07\battleRoyal.cpp \
- P:\HEIG\labo07\battleRoyal.h P:\HEIG\labo07\terrain.h \
+ P:\HEIG\labo07\battleRoyal.h P:\HEIG\labo07\Terrain.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/vector \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/bits/stl_algobase.h \
  C:/PROGRA~1/JETBRA~1/CLION2~1.4/bin/mingw/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32/bits/c++config.h \

@@ -96,19 +96,19 @@ CMakeFiles/prg1.dir/Robot.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prg1.dir/Robot.cpp.s"
 	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S P:\HEIG\labo07\Robot.cpp -o CMakeFiles\prg1.dir\Robot.cpp.s
 
-CMakeFiles/prg1.dir/terrain.cpp.obj: CMakeFiles/prg1.dir/flags.make
-CMakeFiles/prg1.dir/terrain.cpp.obj: ../terrain.cpp
-CMakeFiles/prg1.dir/terrain.cpp.obj: CMakeFiles/prg1.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=P:\HEIG\labo07\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/prg1.dir/terrain.cpp.obj"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/prg1.dir/terrain.cpp.obj -MF CMakeFiles\prg1.dir\terrain.cpp.obj.d -o CMakeFiles\prg1.dir\terrain.cpp.obj -c P:\HEIG\labo07\terrain.cpp
+CMakeFiles/prg1.dir/Terrain.cpp.obj: CMakeFiles/prg1.dir/flags.make
+CMakeFiles/prg1.dir/Terrain.cpp.obj: ../Terrain.cpp
+CMakeFiles/prg1.dir/Terrain.cpp.obj: CMakeFiles/prg1.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=P:\HEIG\labo07\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/prg1.dir/Terrain.cpp.obj"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/prg1.dir/Terrain.cpp.obj -MF CMakeFiles\prg1.dir\Terrain.cpp.obj.d -o CMakeFiles\prg1.dir\Terrain.cpp.obj -c P:\HEIG\labo07\Terrain.cpp
 
-CMakeFiles/prg1.dir/terrain.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/prg1.dir/terrain.cpp.i"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E P:\HEIG\labo07\terrain.cpp > CMakeFiles\prg1.dir\terrain.cpp.i
+CMakeFiles/prg1.dir/Terrain.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/prg1.dir/Terrain.cpp.i"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E P:\HEIG\labo07\Terrain.cpp > CMakeFiles\prg1.dir\Terrain.cpp.i
 
-CMakeFiles/prg1.dir/terrain.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prg1.dir/terrain.cpp.s"
-	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S P:\HEIG\labo07\terrain.cpp -o CMakeFiles\prg1.dir\terrain.cpp.s
+CMakeFiles/prg1.dir/Terrain.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/prg1.dir/Terrain.cpp.s"
+	C:\PROGRA~1\JETBRA~1\CLION2~1.4\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S P:\HEIG\labo07\Terrain.cpp -o CMakeFiles\prg1.dir\Terrain.cpp.s
 
 CMakeFiles/prg1.dir/userInterface.cpp.obj: CMakeFiles/prg1.dir/flags.make
 CMakeFiles/prg1.dir/userInterface.cpp.obj: ../userInterface.cpp
@@ -156,7 +156,7 @@ CMakeFiles/prg1.dir/battleRoyal.cpp.s: cmake_force
 prg1_OBJECTS = \
 "CMakeFiles/prg1.dir/main.cpp.obj" \
 "CMakeFiles/prg1.dir/Robot.cpp.obj" \
-"CMakeFiles/prg1.dir/terrain.cpp.obj" \
+"CMakeFiles/prg1.dir/Terrain.cpp.obj" \
 "CMakeFiles/prg1.dir/userInterface.cpp.obj" \
 "CMakeFiles/prg1.dir/annex.cpp.obj" \
 "CMakeFiles/prg1.dir/battleRoyal.cpp.obj"
@@ -166,7 +166,7 @@ prg1_EXTERNAL_OBJECTS =
 
 prg1.exe: CMakeFiles/prg1.dir/main.cpp.obj
 prg1.exe: CMakeFiles/prg1.dir/Robot.cpp.obj
-prg1.exe: CMakeFiles/prg1.dir/terrain.cpp.obj
+prg1.exe: CMakeFiles/prg1.dir/Terrain.cpp.obj
 prg1.exe: CMakeFiles/prg1.dir/userInterface.cpp.obj
 prg1.exe: CMakeFiles/prg1.dir/annex.cpp.obj
 prg1.exe: CMakeFiles/prg1.dir/battleRoyal.cpp.obj

@@ -39,7 +39,7 @@ bool battleRoyal::startGame(unsigned numberOfRobots) {
         moveRobots();
         //displayGame();
         killLog();
-        std::this_thread::sleep_for(10ms);
+        std::this_thread::sleep_for(500ms);
 
     }
 
@@ -119,7 +119,6 @@ void battleRoyal::moveRobots(){
 
            if(botToKill != -1) {
                killRobot(bot.getID(),(unsigned)botToKill);
-               break;
            }
        }
     }

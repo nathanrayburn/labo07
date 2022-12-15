@@ -152,6 +152,30 @@ Robot.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/Robot.cpp.s
 .PHONY : Robot.cpp.s
 
+Terrain.obj: Terrain.cpp.obj
+.PHONY : Terrain.obj
+
+# target to build an object file
+Terrain.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/Terrain.cpp.obj
+.PHONY : Terrain.cpp.obj
+
+Terrain.i: Terrain.cpp.i
+.PHONY : Terrain.i
+
+# target to preprocess a source file
+Terrain.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/Terrain.cpp.i
+.PHONY : Terrain.cpp.i
+
+Terrain.s: Terrain.cpp.s
+.PHONY : Terrain.s
+
+# target to generate assembly for a file
+Terrain.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/Terrain.cpp.s
+.PHONY : Terrain.cpp.s
+
 annex.obj: annex.cpp.obj
 .PHONY : annex.obj
 
@@ -224,30 +248,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-terrain.obj: terrain.cpp.obj
-.PHONY : terrain.obj
-
-# target to build an object file
-terrain.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/terrain.cpp.obj
-.PHONY : terrain.cpp.obj
-
-terrain.i: terrain.cpp.i
-.PHONY : terrain.i
-
-# target to preprocess a source file
-terrain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/terrain.cpp.i
-.PHONY : terrain.cpp.i
-
-terrain.s: terrain.cpp.s
-.PHONY : terrain.s
-
-# target to generate assembly for a file
-terrain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/terrain.cpp.s
-.PHONY : terrain.cpp.s
-
 userInterface.obj: userInterface.cpp.obj
 .PHONY : userInterface.obj
 
@@ -284,6 +284,9 @@ help:
 	@echo ... Robot.obj
 	@echo ... Robot.i
 	@echo ... Robot.s
+	@echo ... Terrain.obj
+	@echo ... Terrain.i
+	@echo ... Terrain.s
 	@echo ... annex.obj
 	@echo ... annex.i
 	@echo ... annex.s
@@ -293,9 +296,6 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... terrain.obj
-	@echo ... terrain.i
-	@echo ... terrain.s
 	@echo ... userInterface.obj
 	@echo ... userInterface.i
 	@echo ... userInterface.s
