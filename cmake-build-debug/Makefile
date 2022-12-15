@@ -128,6 +128,30 @@ prg1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/build
 .PHONY : prg1/fast
 
+Robot.obj: Robot.cpp.obj
+.PHONY : Robot.obj
+
+# target to build an object file
+Robot.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/Robot.cpp.obj
+.PHONY : Robot.cpp.obj
+
+Robot.i: Robot.cpp.i
+.PHONY : Robot.i
+
+# target to preprocess a source file
+Robot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/Robot.cpp.i
+.PHONY : Robot.cpp.i
+
+Robot.s: Robot.cpp.s
+.PHONY : Robot.s
+
+# target to generate assembly for a file
+Robot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/Robot.cpp.s
+.PHONY : Robot.cpp.s
+
 annex.obj: annex.cpp.obj
 .PHONY : annex.obj
 
@@ -200,30 +224,6 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-robot.obj: robot.cpp.obj
-.PHONY : robot.obj
-
-# target to build an object file
-robot.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/robot.cpp.obj
-.PHONY : robot.cpp.obj
-
-robot.i: robot.cpp.i
-.PHONY : robot.i
-
-# target to preprocess a source file
-robot.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/robot.cpp.i
-.PHONY : robot.cpp.i
-
-robot.s: robot.cpp.s
-.PHONY : robot.s
-
-# target to generate assembly for a file
-robot.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/robot.cpp.s
-.PHONY : robot.cpp.s
-
 terrain.obj: terrain.cpp.obj
 .PHONY : terrain.obj
 
@@ -281,6 +281,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... prg1
+	@echo ... Robot.obj
+	@echo ... Robot.i
+	@echo ... Robot.s
 	@echo ... annex.obj
 	@echo ... annex.i
 	@echo ... annex.s
@@ -290,9 +293,6 @@ help:
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... robot.obj
-	@echo ... robot.i
-	@echo ... robot.s
 	@echo ... terrain.obj
 	@echo ... terrain.i
 	@echo ... terrain.s

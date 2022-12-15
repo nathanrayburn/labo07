@@ -128,12 +128,12 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "robot.cpp",
+			"path" : "Robot.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "robot.h",
+			"path" : "Robot.h",
 			"sourceGroupIndex" : 1
 		},
 		{

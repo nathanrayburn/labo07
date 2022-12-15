@@ -16,7 +16,7 @@
 #define PRG1_BATTLEROYAL_H
 
 #include "terrain.h"
-#include "robot.h"
+#include "Robot.h"
 #include "annex.h"
 #include <string>
 #include <vector>
@@ -24,23 +24,26 @@
 class battleRoyal {
 public:
     // constructors
-     explicit battleRoyal(terrain t);
+     explicit battleRoyal(unsigned terrainWidth, unsigned terrainHeight);
 
     // methods
     bool startGame(unsigned numberOfRobots);
 private:
     // attributes
-    terrain _t;
-    vector<robot> _robots;
+    Terrain _t;
+    unsigned _playersLeft;
+    vector<Robot> _robots;
 
     // methods
-    int isPositionExisting(const robot& bot);
+    int getBotWithSamePosition(const Robot& bot);
     static void messageLog(const string& msg);
     void displayGame() const;
     void placeRobotsInGame();
     void createNumberOfRobots(unsigned numberOfRobots);
-    void killRobot(const unsigned id, const unsigned idToKill);
     void moveRobots();
+    void killRobot(unsigned id, unsigned idToKill);
+    unsigned getWinner();
+
 };
 
 

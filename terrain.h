@@ -15,18 +15,28 @@
 #define PRG1_TERRAIN_H
 
 #include <vector>
-#include "robot.h"
+#include "Robot.h"
 using namespace std;
 
-class terrain {
+class Terrain {
 public:
-    terrain();
-    terrain(unsigned length, unsigned height);
-    unsigned getLength() const;
+    // constructors
+    Terrain();
+    Terrain(unsigned getWidth, unsigned height);
+
+    // accessors
+
+    // getters
+    unsigned getWidth() const;
     unsigned getHeight() const;
 
+    // setters
+
+    void setWidth(unsigned width);
+    void setHeight(unsigned height);
+
 private:
-    unsigned _length;
+    unsigned _width;
     unsigned _height;
 
 };

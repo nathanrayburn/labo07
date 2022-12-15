@@ -15,7 +15,9 @@
 #define PRG1_ROBOT_H
 
 #include <vector>
-#include "terrain.h"
+#include "annex.h"
+
+
 enum class Directions{
     UP,
     DOWN,
@@ -23,12 +25,12 @@ enum class Directions{
     LEFT
 };
 
-class robot{
+class Robot{
 public :
 
     // constructors
-    robot(const unsigned id);
-    robot(unsigned id, unsigned x, unsigned y);
+    Robot(unsigned id);
+    Robot(unsigned id, unsigned x, unsigned y);
 
     // accessors
 
@@ -39,11 +41,12 @@ public :
     bool getLife() const;
 
     // setter
-    void setPositionX(const unsigned x);
-    void setPositionY(const unsigned y);
-    void setLife(const bool isAlive);
+    void setPositionX(unsigned x);
+    void setPositionY(unsigned y);
+    void setLife(bool isAlive);
     //methods
-    //void move(const terrain& t);
+    void move(unsigned limitX, unsigned limitY);
+    std::vector<Directions> getAvailableDirections(unsigned limitX, unsigned limitY) const;
 
 
 private :

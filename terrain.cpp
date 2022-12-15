@@ -14,17 +14,25 @@
 
 #include "terrain.h"
 
-terrain::terrain() {
-    _length = 10;
+Terrain::Terrain() {
+    _width = 10;
     _height = 10;
 }
-terrain::terrain(unsigned int length, unsigned int height) {
-    _length = length;
+Terrain::Terrain(unsigned int length, unsigned int height) {
+    _width = length;
     _height = height;
 }
-unsigned terrain::getLength() const {
-    return _length;
+unsigned Terrain::getWidth() const {
+    return _width;
 }
-unsigned terrain::getHeight() const {
+unsigned Terrain::getHeight() const {
     return _height;
+}
+
+void Terrain::setWidth(unsigned int width) {
+    _width = width;
+}
+
+void Terrain::setHeight(unsigned int height) {
+    _height = height;
 }

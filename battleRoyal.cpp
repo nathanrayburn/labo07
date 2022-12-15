@@ -17,37 +17,47 @@
 #include <algorithm>
 
 using namespace  std;
-battleRoyal::battleRoyal(terrain t) {
-    this->_t = t;
+battleRoyal::battleRoyal(unsigned terrainWidth, unsigned terrainHeight) {
+    _t.setHeight(terrainHeight);
+    _t.setWidth(terrainWidth);
 }
 bool battleRoyal::startGame(unsigned numberOfRobots) {
 
     if(!numberOfRobots) return false;
+
     createNumberOfRobots(numberOfRobots);
+
     placeRobotsInGame();
 
-    while(_robots.size() != 1)
+    _playersLeft = numberOfRobots;
+
+
+    while(_robots.size() != 1 and _playersLeft != 1)
     {
         //move robots & and check kill
         moveRobots();
         //display game
-
     }
 
     // display winner
-
+    cout << "le gagnant est " << getWinner();
     return true;
 }
+unsigned battleRoyal::getWinner() {
 
+    for(Robot bot : _robots) {
+        if(bot.getLife()) return bot.getID();
+    }
+}
 void battleRoyal::placeRobotsInGame() {
-    for(robot& r : this->_robots)
+    for(Robot& r : this->_robots)
     {
-        r.setPositionX(createRandomValue((int)_t.getLength()));
+        r.setPositionX(createRandomValue((int)_t.getWidth()));
         r.setPositionY(createRandomValue((int)_t.getHeight()));
     }
 }
 void battleRoyal::messageLog(const string& msg) {
-    cout << msg;
+    cout << msg << endl;
 }
 void battleRoyal::displayGame() const {
 
@@ -55,41 +65,54 @@ void battleRoyal::displayGame() const {
 void battleRoyal::createNumberOfRobots(const unsigned numberOfRobots) {
     for(unsigned i = 0; i< numberOfRobots; ++i)
     {
-        robot bot(i);
+        Robot bot(i);
         this->_robots.push_back(bot);
     }
 }
-int battleRoyal::isPositionExisting(const robot& bot) {
+int battleRoyal::getBotWithSamePosition(const Robot& bot) {
 
-    for(const robot& r : _robots) {
-        if(r.getID() != bot.getID()) {
-            if(r.getPositionX() == bot.getPositionX() and r.getPositionY() == bot.getPositionY()) {
-               return (int)r.getID();
-            }
+    for(const Robot& r : _robots) {
+        if(r.getID() != bot.getID() and r.getLife() and r.getPositionX() == bot.getPositionX() and r.getPositionY() == bot.getPositionY()) {
+           return (int)r.getID();
         }
     }
 
     return -1;
 }
-void battleRoyal::moveRobots(){
-    for(robot& bot : _robots)
-    {
-       // bot.move(_t);
-       int botToKill;
-        botToKill = isPositionExisting(bot);
-        if(botToKill != -1) {
-            killRobot(bot.getID(),(unsigned)botToKill);
-            break;
-        }
 
+void battleRoyal::moveRobots(){
+    for(Robot& bot : _robots)
+    {
+        // Check if the bot is still alive
+       if(bot.getLife())
+       {
+           bot.move(_t.getWidth(),_t.getHeight());
+           int botToKill;
+
+           botToKill = getBotWithSamePosition(bot);
+
+           if(botToKill != -1) {
+               killRobot(bot.getID(),(unsigned)botToKill);
+               break;
+           }
+       }
     }
 }
-bool isSameID(const unsigned id, const unsigned idToKill) {
-    return id == idToKill;
-}
+
 
 void battleRoyal::killRobot(const unsigned id, const unsigned idToKill) {
 
-    string msg =  to_string(id) + "" + to_string(idToKill);
+    for(Robot& bot : _robots)
+    {
+        if(idToKill == bot.getID())
+        {
+            bot.setLife(false);
+            _playersLeft --;
+            break;
+        }
+    }
+
+    string msg =  "Robot " + to_string(id) + " a tue robot " + to_string(idToKill);
+
     messageLog(msg);
 }

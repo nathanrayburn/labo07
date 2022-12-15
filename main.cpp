@@ -13,7 +13,6 @@
 */
 #include <iostream>
 #include "userInterface.h"
-#include "terrain.h"
 #include "battleRoyal.h"
 
 using namespace std;
@@ -38,8 +37,8 @@ int main() {
     unsigned numberOfRobots = userInput(nbRobotMin,nbRobotMax,sNbRobot);
 
 
-    terrain terrain(width,height);
-    battleRoyal battle(terrain);
+
+    battleRoyal battle(width, height);
 
     if(battle.startGame(numberOfRobots)){
 

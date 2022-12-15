@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="P:/HEIG/labo07/Robot.cpp">
+			<Option target="prg1"/>
+		</Unit>
+		<Unit filename="P:/HEIG/labo07/Robot.h">
+			<Option target="prg1"/>
+		</Unit>
 		<Unit filename="P:/HEIG/labo07/annex.cpp">
 			<Option target="prg1"/>
 		</Unit>
@@ -95,12 +101,6 @@
 			<Option target="prg1"/>
 		</Unit>
 		<Unit filename="P:/HEIG/labo07/main.cpp">
-			<Option target="prg1"/>
-		</Unit>
-		<Unit filename="P:/HEIG/labo07/robot.cpp">
-			<Option target="prg1"/>
-		</Unit>
-		<Unit filename="P:/HEIG/labo07/robot.h">
 			<Option target="prg1"/>
 		</Unit>
 		<Unit filename="P:/HEIG/labo07/terrain.cpp">
