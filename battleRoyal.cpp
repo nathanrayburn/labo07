@@ -34,9 +34,8 @@ bool battleRoyal::startGame(unsigned numberOfRobots) {
 
     while(_robots.size() != 1 and _playersLeft != 1)
     {
-        //move robots & and check kill
         moveRobots();
-        //display game
+        //displayGame();
     }
 
     // display winner
@@ -60,7 +59,24 @@ void battleRoyal::messageLog(const string& msg) {
     cout << msg << endl;
 }
 void battleRoyal::displayGame() const {
+    unsigned limitX = _t.getWidth()+1;
+    unsigned limitY = _t.getHeight()+1;
 
+    cout << "_";
+    for(unsigned colomn = 0; colomn <= limitY ; colomn++) {
+        for(unsigned row = 0; row <= limitX; row++) {
+            if(colomn == 0 or colomn == limitY) {
+                cout << "_";
+            }
+            if((row == 0 and colomn != 0 and colomn != limitY) or (row == limitX and colomn!=0 and colomn != limitY)) {
+                cout << "|";
+            }
+            if(colomn != 0 and colomn != limitY) {
+                cout << " ";
+            }
+        }
+        cout << endl;
+    }
 }
 void battleRoyal::createNumberOfRobots(const unsigned numberOfRobots) {
     for(unsigned i = 0; i< numberOfRobots; ++i)

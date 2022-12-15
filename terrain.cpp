@@ -18,10 +18,6 @@ Terrain::Terrain() {
     _width = 10;
     _height = 10;
 }
-Terrain::Terrain(unsigned int length, unsigned int height) {
-    _width = length;
-    _height = height;
-}
 unsigned Terrain::getWidth() const {
     return _width;
 }

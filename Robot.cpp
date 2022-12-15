@@ -84,14 +84,4 @@ void Robot::setPositionY(const unsigned y) {
 }
 void Robot::setPositionX(const unsigned x) {
     _x = x;
-};
-vector<Directions> Robot::filterDirections()
-{
-    vector<Directions> d = {};
-    return d;
-}
-void Robot::setPosition(unsigned x, unsigned y)
-{
-    _x = x;
-    _y = y;
 }

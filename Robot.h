@@ -29,7 +29,7 @@ class Robot{
 public :
 
     // constructors
-    Robot(unsigned id);
+    explicit Robot(unsigned id);
     Robot(unsigned id, unsigned x, unsigned y);
 
     // accessors
@@ -55,14 +55,6 @@ private :
     unsigned _y;
     unsigned _id;
     bool _isAlive;
-
-    //accessors
-
-    //setter
-    void setPosition(unsigned x, unsigned y);
-
-    //methods
-    std::vector<Directions> filterDirections();
 
 };
 
