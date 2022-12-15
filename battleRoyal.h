@@ -31,12 +31,12 @@ public:
 private:
     // attributes
     Terrain _t;
-    unsigned _playersLeft;
+    unsigned _playersLeft{};
     vector<Robot> _robots;
 
     // methods
     int getBotWithSamePosition(const Robot& bot);
-    static void messageLog(const string& msg);
+    void killLog();
     void displayGame() const;
     void placeRobotsInGame();
     void createNumberOfRobots(unsigned numberOfRobots);

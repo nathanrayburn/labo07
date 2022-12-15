@@ -15,6 +15,7 @@
 #include "battleRoyal.h"
 #include <iostream>
 #include <algorithm>
+#include <thread>
 
 using namespace  std;
 battleRoyal::battleRoyal(unsigned terrainWidth, unsigned terrainHeight) {
@@ -34,8 +35,12 @@ bool battleRoyal::startGame(unsigned numberOfRobots) {
 
     while(_robots.size() != 1 and _playersLeft != 1)
     {
+        system("cls");
         moveRobots();
         //displayGame();
+        killLog();
+        std::this_thread::sleep_for(10ms);
+
     }
 
     // display winner
@@ -55,8 +60,13 @@ void battleRoyal::placeRobotsInGame() {
         r.setPositionY(createRandomValue((int)_t.getHeight()));
     }
 }
-void battleRoyal::messageLog(const string& msg) {
-    cout << msg << endl;
+void battleRoyal::killLog()  {
+
+   for(const Robot& bot : _robots) {
+        if(!bot.getLife()) {
+            cout << bot.getRobotKilledBy() << " killed " << bot.getID() << endl;
+        }
+   }
 }
 void battleRoyal::displayGame() const {
     unsigned limitX = _t.getWidth()+1;
@@ -123,12 +133,9 @@ void battleRoyal::killRobot(const unsigned id, const unsigned idToKill) {
         if(idToKill == bot.getID())
         {
             bot.setLife(false);
+            bot.setRobotKilledBy(id);
             _playersLeft --;
             break;
         }
     }
-
-    string msg =  "Robot " + to_string(id) + " a tue robot " + to_string(idToKill);
-
-    messageLog(msg);
 }

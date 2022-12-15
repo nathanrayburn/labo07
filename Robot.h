@@ -39,11 +39,13 @@ public :
     unsigned getPositionY() const;
     unsigned getID() const;
     bool getLife() const;
+    int getRobotKilledBy() const;
 
     // setter
     void setPositionX(unsigned x);
     void setPositionY(unsigned y);
     void setLife(bool isAlive);
+    void setRobotKilledBy(unsigned id);
     //methods
     void move(unsigned limitX, unsigned limitY);
     std::vector<Directions> getAvailableDirections(unsigned limitX, unsigned limitY) const;
@@ -51,10 +53,11 @@ public :
 
 private :
 
-    unsigned _x;
-    unsigned _y;
+    unsigned _x = 0;
+    unsigned _y = 0;
     unsigned _id;
-    bool _isAlive;
+    bool _isAlive = true;
+    int _killedBy = -1;
 
 };
 

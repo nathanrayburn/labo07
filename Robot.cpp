@@ -12,18 +12,15 @@
   -------------------------------------------------------------------------------------------------------------------
 */
 #include "Robot.h"
+#include <iomanip>
 using namespace std;
 Robot::Robot(const unsigned id) {
     _id = id;
-    _x = 0;
-    _y = 0;
-    _isAlive = true;
 }
 Robot::Robot(unsigned id, unsigned x, unsigned y) {
     _id = id;
     _x = x;
     _y = y;
-    _isAlive = true;
 }
 vector<Directions> Robot::getAvailableDirections(const unsigned limitX, const unsigned limitY) const {
 
@@ -84,4 +81,14 @@ void Robot::setPositionY(const unsigned y) {
 }
 void Robot::setPositionX(const unsigned x) {
     _x = x;
+}
+void Robot::setRobotKilledBy(unsigned int id) {
+    _killedBy = (int)id;
+}
+int Robot::getRobotKilledBy() const {
+    return _killedBy;
+}
+ostream& operator<<(ostream& os, const Robot& robot) {
+    os << robot.getID() << endl;
+    return os;
 }
