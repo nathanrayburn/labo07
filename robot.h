@@ -1,7 +1,16 @@
-//
-// Created by natha on 13/12/2022.
-//
+/*
+  -------------------------------------------------------------------------------------------------------------------
+  Fichier     :
+  Nom du labo : Labo 07 - Robots
+  Auteur(s)   : Rayburn Nathan
+  Date        :
+  But         :
 
+  Remarque(s) : RAS
+
+  Compilateur : Mingw-w64 g++ 12.2.0
+  -------------------------------------------------------------------------------------------------------------------
+*/
 #ifndef PRG1_ROBOT_H
 #define PRG1_ROBOT_H
 
@@ -27,13 +36,14 @@ public :
     unsigned getPositionX() const;
     unsigned getPositionY() const;
     unsigned getID() const;
+    bool getLife() const;
 
     // setter
     void setPositionX(const unsigned x);
     void setPositionY(const unsigned y);
-
+    void setLife(const bool isAlive);
     //methods
-   // void move(const terrain& t);
+    //void move(const terrain& t);
 
 
 private :
@@ -41,6 +51,7 @@ private :
     unsigned _x;
     unsigned _y;
     unsigned _id;
+    bool _isAlive;
 
     //accessors
 

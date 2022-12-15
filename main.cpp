@@ -1,6 +1,17 @@
+/*
+  -------------------------------------------------------------------------------------------------------------------
+  Fichier     :
+  Nom du labo : Labo 07 - Robots
+  Auteur(s)   : Rayburn Nathan
+  Date        :
+  But         :
+
+  Remarque(s) : RAS
+
+  Compilateur : Mingw-w64 g++ 12.2.0
+  -------------------------------------------------------------------------------------------------------------------
+*/
 #include <iostream>
-#include <vector>
-#include "robot.h"
 #include "userInterface.h"
 #include "terrain.h"
 #include "battleRoyal.h"
