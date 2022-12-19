@@ -42,6 +42,8 @@ int main() {
 
     if(battle.startGame(numberOfRobots)){
 
+    }else {
+        cout << "Couldn't start the game" << endl;
     }
 
 

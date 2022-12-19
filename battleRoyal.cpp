@@ -32,15 +32,14 @@ bool battleRoyal::startGame(unsigned numberOfRobots) {
 
     _playersLeft = numberOfRobots;
 
-
+    // regarder pour enlever le .size
     while(_robots.size() != 1 and _playersLeft != 1)
     {
         system("cls");
         moveRobots();
-        //displayGame();
+        displayGame();
         killLog();
         std::this_thread::sleep_for(500ms);
-
     }
 
     // display winner
@@ -52,40 +51,88 @@ unsigned battleRoyal::getWinner() {
     for(Robot bot : _robots) {
         if(bot.getLife()) return bot.getID();
     }
+    return -1;
 }
 void battleRoyal::placeRobotsInGame() {
+
     for(Robot& r : this->_robots)
     {
-        r.setPositionX(createRandomValue((int)_t.getWidth()));
-        r.setPositionY(createRandomValue((int)_t.getHeight()));
+        // Set positionIsTaken to true initially
+        bool positionIsTaken = true;
+        // Keep looping until a position is found that is not taken
+        while (positionIsTaken) {
+            // Assign random position to the current robot
+            r.setPositionX(createRandomValue((int)_t.getWidth()));
+            r.setPositionY(createRandomValue((int)_t.getHeight()));
+
+            // Set positionIsTaken to false initially
+            positionIsTaken = false;
+            // Iterate through the list of all robots
+            for (const Robot& other : _robots) {
+                // If another robot has the same position as the current robot
+                if (other.getID() != r.getID() && other.getPositionX() == r.getPositionX() && other.getPositionY() == r.getPositionY()) {
+                    // Set positionIsTaken to true and exit the inner loop
+                    positionIsTaken = true;
+                    break;
+                }
+            }
+        }
     }
+
 }
 void battleRoyal::killLog()  {
-
+    cout << endl;
    for(const Robot& bot : _robots) {
         if(!bot.getLife()) {
             cout << bot.getRobotKilledBy() << " killed " << bot.getID() << endl;
         }
    }
 }
+// check maybe to directly cout robot by its position ?
 void battleRoyal::displayGame() const {
+
+    // Get the width and height of the terrain
     unsigned limitX = _t.getWidth()+1;
     unsigned limitY = _t.getHeight()+1;
 
+    // Print the top row of underscores
     cout << "_";
-    for(unsigned colomn = 0; colomn <= limitY ; colomn++) {
-        for(unsigned row = 0; row <= limitX; row++) {
-            if(colomn == 0 or colomn == limitY) {
-                cout << "_";
+    // Print underscores for each column of the terrain
+    for (unsigned col = 0; col < limitY; col++) {
+        cout << "_";
+    }
+    cout << endl;
+
+    // Iterate over each row of the terrain
+    for (unsigned row = 0; row < limitX; row++) {
+        // Print the leftmost column with a pipe
+        cout << "|";
+        // Iterate over each column of the terrain
+        for (unsigned col = 0; col < limitY; col++) {
+            // Check if there is a robot at the current position
+            bool foundRobot = false;
+            for (const Robot& bot : _robots) {
+                if (bot.getPositionX() == row && bot.getPositionY() == col and bot.getLife()) {
+                    // Print the ID of the robot
+                    cout << bot.getID();
+                    foundRobot = true;
+                    break;
+                }
             }
-            if((row == 0 and colomn != 0 and colomn != limitY) or (row == limitX and colomn!=0 and colomn != limitY)) {
-                cout << "|";
-            }
-            if(colomn != 0 and colomn != limitY) {
+            // If there is no robot at the current position, print a space
+            if (!foundRobot) {
                 cout << " ";
             }
         }
-        cout << endl;
+        // Print the rightmost column with a pipe
+        cout << "|" << endl;
+    }
+
+    // Print the bottom row of underscores
+    cout << "_";
+    // Print underscores for each column of the terrain
+    for (unsigned col = 0; col < limitY; col++) {
+        cout << "_";
     }
 }
 void battleRoyal::createNumberOfRobots(const unsigned numberOfRobots) {

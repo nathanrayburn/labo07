@@ -6,6 +6,6 @@
 #define PRG1_USERINTERFACE_H
 
 
-unsigned userInput(const unsigned min, const unsigned max, const std::string& inputMsg);
+unsigned userInput(unsigned min, unsigned max, const std::string& inputMsg);
 
 #endif //PRG1_USERINTERFACE_H
