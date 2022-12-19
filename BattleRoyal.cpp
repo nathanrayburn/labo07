@@ -12,17 +12,17 @@
   -------------------------------------------------------------------------------------------------------------------
 */
 
-#include "battleRoyal.h"
+#include "BattleRoyal.h"
 #include <iostream>
 #include <algorithm>
 #include <thread>
 
 using namespace  std;
-battleRoyal::battleRoyal(unsigned terrainWidth, unsigned terrainHeight) {
+BattleRoyal::BattleRoyal(unsigned terrainWidth, unsigned terrainHeight) {
     _t.setHeight(terrainHeight);
     _t.setWidth(terrainWidth);
 }
-bool battleRoyal::startGame(unsigned numberOfRobots) {
+bool BattleRoyal::startGame(unsigned numberOfRobots) {
 
     if(!numberOfRobots) return false;
 
@@ -33,7 +33,7 @@ bool battleRoyal::startGame(unsigned numberOfRobots) {
     _playersLeft = numberOfRobots;
 
     // regarder pour enlever le .size
-    while(_robots.size() != 1 and _playersLeft != 1)
+    while(_robots.size() != 1)
     {
         system("cls");
         moveRobots();
@@ -46,14 +46,19 @@ bool battleRoyal::startGame(unsigned numberOfRobots) {
     cout << "le gagnant est " << getWinner();
     return true;
 }
-unsigned battleRoyal::getWinner() {
+unsigned BattleRoyal::getWinner() {
 
-    for(Robot bot : _robots) {
-        if(bot.getLife()) return bot.getID();
+    // Find the first robot that is still alive
+    auto it = std::find_if(_robots.begin(), _robots.end(), [](const Robot& bot) { return bot.getLife(); });
+
+    // If a robot was found, return its ID
+    if (it != _robots.end()) {
+        return it->getID();
     }
+    // If no robot was found, return -1
     return -1;
 }
-void battleRoyal::placeRobotsInGame() {
+void BattleRoyal::placeRobotsInGame() {
 
     for(Robot& r : this->_robots)
     {
@@ -80,16 +85,31 @@ void battleRoyal::placeRobotsInGame() {
     }
 
 }
-void battleRoyal::killLog()  {
-    cout << endl;
-   for(const Robot& bot : _robots) {
-        if(!bot.getLife()) {
-            cout << bot.getRobotKilledBy() << " killed " << bot.getID() << endl;
-        }
-   }
+bool compareTimeOfDeath(const Robot& firstRobot, const Robot& secondRobot) {
+    return firstRobot.getTimeOfDeath() < secondRobot.getTimeOfDeath();
 }
-// check maybe to directly cout robot by its position ?
-void battleRoyal::displayGame() const {
+void BattleRoyal::killLog()  {
+
+    vector<Robot> killedRobots;
+
+    cout << endl;
+    for(const Robot& bot : _robots) {
+        if(!bot.getLife()) {
+            killedRobots.push_back(bot);
+        }
+    }
+
+    sort(killedRobots.begin(),killedRobots.end(),compareTimeOfDeath);
+    for(Robot& killedRobot : _robots)
+    {
+       if(!killedRobot.getLife()) {
+           cout << killedRobot.getRobotKilledBy() << " killed " << killedRobot.getID() << endl;
+       }
+    }
+
+}
+
+void BattleRoyal::displayGame() const {
 
     // Get the width and height of the terrain
     unsigned limitX = _t.getWidth()+1;
@@ -135,14 +155,14 @@ void battleRoyal::displayGame() const {
         cout << "_";
     }
 }
-void battleRoyal::createNumberOfRobots(const unsigned numberOfRobots) {
+void BattleRoyal::createNumberOfRobots(const unsigned numberOfRobots) {
     for(unsigned i = 0; i< numberOfRobots; ++i)
     {
         Robot bot(i);
         this->_robots.push_back(bot);
     }
 }
-int battleRoyal::getBotWithSamePosition(const Robot& bot) {
+int BattleRoyal::getBotWithSamePosition(const Robot& bot) {
 
     for(const Robot& r : _robots) {
         if(r.getID() != bot.getID() and r.getLife() and r.getPositionX() == bot.getPositionX() and r.getPositionY() == bot.getPositionY()) {
@@ -153,7 +173,7 @@ int battleRoyal::getBotWithSamePosition(const Robot& bot) {
     return -1;
 }
 
-void battleRoyal::moveRobots(){
+void BattleRoyal::moveRobots(){
     for(Robot& bot : _robots)
     {
         // Check if the bot is still alive
@@ -172,14 +192,15 @@ void battleRoyal::moveRobots(){
 }
 
 
-void battleRoyal::killRobot(const unsigned id, const unsigned idToKill) {
+void BattleRoyal::killRobot(const unsigned killerId, const unsigned killedId) {
 
     for(Robot& bot : _robots)
     {
-        if(idToKill == bot.getID())
+        if(killedId == bot.getID())
         {
             bot.setLife(false);
-            bot.setRobotKilledBy(id);
+            bot.setRobotKilledBy(killerId);
+            bot.setTimeOfDeath(chrono::system_clock::now());
             _playersLeft --;
             break;
         }

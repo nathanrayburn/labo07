@@ -14,16 +14,15 @@
 #include "Robot.h"
 #include <iomanip>
 using namespace std;
-Robot::Robot(const unsigned id) {
-    _id = id;
-}
-Robot::Robot(unsigned id, unsigned x, unsigned y) {
-    _id = id;
+
+unsigned Robot::_nextID = 0;
+Robot::Robot(unsigned id) : _id(_nextID++) {}
+Robot::Robot(unsigned id, unsigned x, unsigned y) : _id(_nextID++) {
     _x = x;
     _y = y;
 }
 vector<Directions> Robot::getAvailableDirections(const unsigned limitX, const unsigned limitY) const {
-
+    // ameliorer les if ?
     vector<Directions> availableDirections = {};
 
     if(_x + 1 <= limitX) {
@@ -88,7 +87,20 @@ void Robot::setRobotKilledBy(unsigned int id) {
 int Robot::getRobotKilledBy() const {
     return _killedBy;
 }
-ostream& operator<<(ostream& os, const Robot& robot) {
-    os << robot.getID() << endl;
-    return os;
+void Robot::setTimeOfDeath(const std::chrono::system_clock::time_point& timeOfDeath) {
+    _timeOfDeath = timeOfDeath;
+}
+chrono::system_clock::time_point Robot::getTimeOfDeath() const {
+    return _timeOfDeath;
+}
+Robot& Robot::operator=(const Robot& other) {
+    if (this != &other) {  // self-assignment check
+        _id = other._id;
+        _x = other._x;
+        _y = other._y;
+        _isAlive = other._isAlive;
+        _killedBy = other._killedBy;
+        _timeOfDeath = other._timeOfDeath;
+    }
+    return *this;
 }

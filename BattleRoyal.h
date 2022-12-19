@@ -21,10 +21,10 @@
 #include <string>
 #include <vector>
 
-class battleRoyal {
+class BattleRoyal {
 public:
     // constructors
-     explicit battleRoyal(unsigned terrainWidth, unsigned terrainHeight);
+     explicit BattleRoyal(unsigned terrainWidth, unsigned terrainHeight);
 
     // methods
     bool startGame(unsigned numberOfRobots);
@@ -33,6 +33,7 @@ private:
     Terrain _t;
     unsigned _playersLeft{};
     vector<Robot> _robots;
+
 
     // methods
     int getBotWithSamePosition(const Robot& bot);

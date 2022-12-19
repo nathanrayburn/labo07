@@ -16,7 +16,7 @@
 
 #include <vector>
 #include "annex.h"
-
+#include <chrono>
 
 enum class Directions{
     UP,
@@ -48,9 +48,14 @@ public :
     void setRobotKilledBy(unsigned id);
     //methods
     void move(unsigned limitX, unsigned limitY);
+    void setTimeOfDeath(const std::chrono::system_clock::time_point& timeOfDeath);
+
     std::vector<Directions> getAvailableDirections(unsigned limitX, unsigned limitY) const;
+    std::chrono::system_clock::time_point getTimeOfDeath() const;
 
 
+    // overrides
+    Robot& operator=(const Robot& other);
 private :
 
     unsigned _x = 0;
@@ -58,6 +63,11 @@ private :
     unsigned _id;
     bool _isAlive = true;
     int _killedBy = -1;
+
+    std::chrono::system_clock::time_point _timeOfDeath;
+
+    static unsigned _nextID;
+
 
 };
 

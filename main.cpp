@@ -13,7 +13,7 @@
 */
 #include <iostream>
 #include "userInterface.h"
-#include "battleRoyal.h"
+#include "BattleRoyal.h"
 
 using namespace std;
 
@@ -38,7 +38,7 @@ int main() {
 
 
 
-    battleRoyal battle(width, height);
+    BattleRoyal battle(width, height);
 
     if(battle.startGame(numberOfRobots)){
 
