@@ -33,13 +33,13 @@ bool BattleRoyal::startGame(unsigned numberOfRobots) {
     _playersLeft = numberOfRobots;
 
     // regarder pour enlever le .size
-    while(_robots.size() != 1)
+    while(_playersLeft != 1)
     {
         system("cls");
         moveRobots();
         displayGame();
         killLog();
-        std::this_thread::sleep_for(500ms);
+        this_thread::sleep_for(500ms);
     }
 
     // display winner
@@ -48,14 +48,9 @@ bool BattleRoyal::startGame(unsigned numberOfRobots) {
 }
 unsigned BattleRoyal::getWinner() {
 
-    // Find the first robot that is still alive
-    auto it = std::find_if(_robots.begin(), _robots.end(), [](const Robot& bot) { return bot.getLife(); });
-
-    // If a robot was found, return its ID
-    if (it != _robots.end()) {
-        return it->getID();
+    for(Robot& bot : _robots) {
+        if(bot.getLife()) return bot.getID();
     }
-    // If no robot was found, return -1
     return -1;
 }
 void BattleRoyal::placeRobotsInGame() {
