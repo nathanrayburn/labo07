@@ -95,6 +95,7 @@ void BattleRoyal::killLog()  {
     }
 
     sort(killedRobots.begin(),killedRobots.end(),compareTimeOfDeath);
+
     for(Robot& killedRobot : _robots)
     {
        if(!killedRobot.getLife()) {
