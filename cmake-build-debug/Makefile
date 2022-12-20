@@ -128,6 +128,30 @@ prg1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/build
 .PHONY : prg1/fast
 
+BattleRoyal.obj: BattleRoyal.cpp.obj
+.PHONY : BattleRoyal.obj
+
+# target to build an object file
+BattleRoyal.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/BattleRoyal.cpp.obj
+.PHONY : BattleRoyal.cpp.obj
+
+BattleRoyal.i: BattleRoyal.cpp.i
+.PHONY : BattleRoyal.i
+
+# target to preprocess a source file
+BattleRoyal.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/BattleRoyal.cpp.i
+.PHONY : BattleRoyal.cpp.i
+
+BattleRoyal.s: BattleRoyal.cpp.s
+.PHONY : BattleRoyal.s
+
+# target to generate assembly for a file
+BattleRoyal.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/BattleRoyal.cpp.s
+.PHONY : BattleRoyal.cpp.s
+
 Robot.obj: Robot.cpp.obj
 .PHONY : Robot.obj
 
@@ -152,30 +176,6 @@ Robot.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/Robot.cpp.s
 .PHONY : Robot.cpp.s
 
-Terrain.obj: Terrain.cpp.obj
-.PHONY : Terrain.obj
-
-# target to build an object file
-Terrain.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/Terrain.cpp.obj
-.PHONY : Terrain.cpp.obj
-
-Terrain.i: Terrain.cpp.i
-.PHONY : Terrain.i
-
-# target to preprocess a source file
-Terrain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/Terrain.cpp.i
-.PHONY : Terrain.cpp.i
-
-Terrain.s: Terrain.cpp.s
-.PHONY : Terrain.s
-
-# target to generate assembly for a file
-Terrain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/Terrain.cpp.s
-.PHONY : Terrain.cpp.s
-
 annex.obj: annex.cpp.obj
 .PHONY : annex.obj
 
@@ -199,30 +199,6 @@ annex.s: annex.cpp.s
 annex.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/annex.cpp.s
 .PHONY : annex.cpp.s
-
-battleRoyal.obj: battleRoyal.cpp.obj
-.PHONY : battleRoyal.obj
-
-# target to build an object file
-battleRoyal.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/battleRoyal.cpp.obj
-.PHONY : battleRoyal.cpp.obj
-
-battleRoyal.i: battleRoyal.cpp.i
-.PHONY : battleRoyal.i
-
-# target to preprocess a source file
-battleRoyal.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/battleRoyal.cpp.i
-.PHONY : battleRoyal.cpp.i
-
-battleRoyal.s: battleRoyal.cpp.s
-.PHONY : battleRoyal.s
-
-# target to generate assembly for a file
-battleRoyal.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\prg1.dir\build.make CMakeFiles/prg1.dir/battleRoyal.cpp.s
-.PHONY : battleRoyal.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -281,18 +257,15 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... prg1
+	@echo ... BattleRoyal.obj
+	@echo ... BattleRoyal.i
+	@echo ... BattleRoyal.s
 	@echo ... Robot.obj
 	@echo ... Robot.i
 	@echo ... Robot.s
-	@echo ... Terrain.obj
-	@echo ... Terrain.i
-	@echo ... Terrain.s
 	@echo ... annex.obj
 	@echo ... annex.i
 	@echo ... annex.s
-	@echo ... battleRoyal.obj
-	@echo ... battleRoyal.i
-	@echo ... battleRoyal.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

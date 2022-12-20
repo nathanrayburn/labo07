@@ -4,7 +4,7 @@
   Nom du labo : Labo 07 - Robots
   Auteur(s)   : Rayburn Nathan, Besia Flavien
   Date        : 13.12.2022
-  But         :
+  But         : This class is designed to manage the robots
 
   Remarque(s) : RAS
 
@@ -19,14 +19,14 @@
 #include "annex.h"
 #include <chrono>
 
-enum class Directions{
+enum class Directions {
     UP,
     DOWN,
     RIGHT,
     LEFT
 };
 
-class Robot{
+class Robot {
 public :
 
     // constructors
@@ -36,27 +36,32 @@ public :
 
     // getter
     unsigned getPositionX() const;
+
     unsigned getPositionY() const;
+
     unsigned getID() const;
+
     bool getLife() const;
+
     unsigned getRobotKilledBy() const;
 
     std::vector<Directions> getAvailableDirections(unsigned limitX, unsigned limitY) const;
+
     std::chrono::system_clock::time_point getTimeOfDeath() const;
 
     // setter
     void setPositionX(unsigned x);
+
     void setPositionY(unsigned y);
 
     //methods
     void move(unsigned limitX, unsigned limitY);
+
     void kill(unsigned killerId);
 
-
-
-
     // overrides
-    Robot& operator=(const Robot& other);
+    Robot &operator=(const Robot &other);
+
 private :
 
     static unsigned _nextID;

@@ -3,4 +3,4 @@ project(prg1)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(prg1 main.cpp Robot.cpp Robot.h Terrain.cpp Terrain.h userInterface.cpp userInterface.h annex.cpp annex.h BattleRoyal.cpp BattleRoyal.h)
+add_executable(prg1 main.cpp Robot.cpp Robot.h userInterface.cpp userInterface.h annex.cpp annex.h BattleRoyal.cpp BattleRoyal.h)

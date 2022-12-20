@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "prg1::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-prg1-Debug-8d40f50d803feb2238e9.json",
+					"jsonFile" : "target-prg1-Debug-00099f1d82406f6d4a77.json",
 					"name" : "prg1",
 					"projectIndex" : 0
 				}
@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "C:/Users/natha/Documents/HEIG-VD/labo07/cmake-build-debug",
-		"source" : "C:/Users/natha/Documents/HEIG-VD/labo07"
+		"build" : "P:/HEIG/labo07/cmake-build-debug",
+		"source" : "P:/HEIG/labo07"
 	},
 	"version" : 
 	{

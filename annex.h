@@ -4,7 +4,8 @@
   Nom du labo : Labo 07 - Robots
   Auteur(s)   : Rayburn Nathan, Besia Flavien
   Date        : 13.12.2022
-  But         :
+  But         : Annex containing general functions such as
+                - create random value
 
   Remarque(s) : RAS
 
@@ -15,6 +16,6 @@
 #ifndef PRG1_ANNEX_H
 #define PRG1_ANNEX_H
 
-int createRandomValue(int valMax);
+unsigned createRandomValue(unsigned valMax);
 
 #endif //PRG1_ANNEX_H

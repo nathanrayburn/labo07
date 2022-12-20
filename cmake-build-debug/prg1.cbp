@@ -82,28 +82,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="P:/HEIG/labo07/BattleRoyal.cpp">
+			<Option target="prg1"/>
+		</Unit>
+		<Unit filename="P:/HEIG/labo07/BattleRoyal.h">
+			<Option target="prg1"/>
+		</Unit>
 		<Unit filename="P:/HEIG/labo07/Robot.cpp">
 			<Option target="prg1"/>
 		</Unit>
 		<Unit filename="P:/HEIG/labo07/Robot.h">
 			<Option target="prg1"/>
 		</Unit>
-		<Unit filename="P:/HEIG/labo07/Terrain.cpp">
-			<Option target="prg1"/>
-		</Unit>
-		<Unit filename="P:/HEIG/labo07/Terrain.h">
-			<Option target="prg1"/>
-		</Unit>
 		<Unit filename="P:/HEIG/labo07/annex.cpp">
 			<Option target="prg1"/>
 		</Unit>
 		<Unit filename="P:/HEIG/labo07/annex.h">
-			<Option target="prg1"/>
-		</Unit>
-		<Unit filename="P:/HEIG/labo07/battleRoyal.cpp">
-			<Option target="prg1"/>
-		</Unit>
-		<Unit filename="P:/HEIG/labo07/battleRoyal.h">
 			<Option target="prg1"/>
 		</Unit>
 		<Unit filename="P:/HEIG/labo07/main.cpp">
