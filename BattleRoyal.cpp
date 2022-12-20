@@ -27,6 +27,12 @@ private :
     const Robot& _bot;
 };
 
+bool RobotSamePosition::operator()(const Robot &other) {
+    // return true when the bots have the same position and that they're both alive
+    return _bot.getPositionX() == other.getPositionX() and _bot.getPositionY() == other.getPositionY()
+           and _bot.getID() != other.getID() and other.getLife() and _bot.getLife();
+}
+
 BattleRoyal::BattleRoyal(unsigned terrainWidth, unsigned terrainHeight) {
     _t.setHeight(terrainHeight);
     _t.setWidth(terrainWidth);
@@ -160,13 +166,6 @@ void BattleRoyal::createNumberOfRobots(const unsigned numberOfRobots) {
     }
 }
 
-
-
-bool RobotSamePosition::operator()(const Robot &other) {
-    return _bot.getPositionX() == other.getPositionX() and _bot.getPositionY() == other.getPositionY()
-    and _bot.getID() != other.getID() and other.getLife() and _bot.getLife();
-}
-
 void BattleRoyal::moveRobots(){
     for(Robot& bot : _robots)
     {
@@ -177,9 +176,11 @@ void BattleRoyal::moveRobots(){
        if(it != _robots.end()) {
            Robot& botToKill = *it;
            botToKill.kill(bot.getID());
+
+           // Instead of deleting a robot from the list, I'd rather keep them in the vector.
+           // For potential future functionalities. Maybe we could revive a robot...?
            _playersLeft--;
        }
-
     }
 }
 

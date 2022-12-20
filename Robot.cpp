@@ -16,11 +16,11 @@
 
 using namespace std;
 
-unsigned Robot::_nextID = 0;
+unsigned Robot::_nextID = 0; // unique ID
 
 Robot::Robot() : _id(_nextID++) {}
 vector<Directions> Robot::getAvailableDirections(const unsigned limitX, const unsigned limitY) const {
-    // ameliorer les if ?
+
     vector<Directions> availableDirections = {};
 
     if(_x + 1 <= limitX) {
