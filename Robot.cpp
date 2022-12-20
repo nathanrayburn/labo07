@@ -1,9 +1,9 @@
 /*
   -------------------------------------------------------------------------------------------------------------------
-  Fichier     :
+  Fichier     : Robot.cpp
   Nom du labo : Labo 07 - Robots
-  Auteur(s)   : Rayburn Nathan
-  Date        :
+  Auteur(s)   : Rayburn Nathan, Besia Flavien
+  Date        : 13.12.2022
   But         :
 
   Remarque(s) : RAS
@@ -11,16 +11,14 @@
   Compilateur : Mingw-w64 g++ 12.2.0
   -------------------------------------------------------------------------------------------------------------------
 */
+
 #include "Robot.h"
-#include <iomanip>
+
 using namespace std;
 
 unsigned Robot::_nextID = 0;
-Robot::Robot(unsigned id) : _id(_nextID++) {}
-Robot::Robot(unsigned id, unsigned x, unsigned y) : _id(_nextID++) {
-    _x = x;
-    _y = y;
-}
+
+Robot::Robot() : _id(_nextID++) {}
 vector<Directions> Robot::getAvailableDirections(const unsigned limitX, const unsigned limitY) const {
     // ameliorer les if ?
     vector<Directions> availableDirections = {};
@@ -60,9 +58,6 @@ void Robot::move(const unsigned limitX, const unsigned limitY)
             break;
     }
 }
-void Robot::setLife(const bool isAlive) {
-    _isAlive = isAlive;
-}
 bool Robot::getLife() const {
     return _isAlive;
 }
@@ -81,14 +76,8 @@ void Robot::setPositionY(const unsigned y) {
 void Robot::setPositionX(const unsigned x) {
     _x = x;
 }
-void Robot::setRobotKilledBy(unsigned int id) {
-    _killedBy = (int)id;
-}
-int Robot::getRobotKilledBy() const {
+unsigned Robot::getRobotKilledBy() const {
     return _killedBy;
-}
-void Robot::setTimeOfDeath(const std::chrono::system_clock::time_point& timeOfDeath) {
-    _timeOfDeath = timeOfDeath;
 }
 chrono::system_clock::time_point Robot::getTimeOfDeath() const {
     return _timeOfDeath;
@@ -103,4 +92,10 @@ Robot& Robot::operator=(const Robot& other) {
         _timeOfDeath = other._timeOfDeath;
     }
     return *this;
+}
+
+void Robot::kill(const unsigned killerId) {
+    _killedBy = killerId;
+    _isAlive = false;
+    _timeOfDeath = chrono::system_clock::now();
 }

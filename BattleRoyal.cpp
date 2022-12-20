@@ -18,6 +18,7 @@
 #include <thread>
 
 using namespace  std;
+
 BattleRoyal::BattleRoyal(unsigned terrainWidth, unsigned terrainHeight) {
     _t.setHeight(terrainHeight);
     _t.setWidth(terrainWidth);
@@ -32,14 +33,13 @@ bool BattleRoyal::startGame(unsigned numberOfRobots) {
 
     _playersLeft = numberOfRobots;
 
-    // regarder pour enlever le .size
     while(_playersLeft != 1)
     {
         system("cls");
         moveRobots();
         displayGame();
         killLog();
-        this_thread::sleep_for(500ms);
+        this_thread::sleep_for(50ms);
     }
 
     // display winner
@@ -85,16 +85,9 @@ bool compareTimeOfDeath(const Robot& firstRobot, const Robot& secondRobot) {
 }
 void BattleRoyal::killLog()  {
 
-    vector<Robot> killedRobots;
-
     cout << endl;
-    for(const Robot& bot : _robots) {
-        if(!bot.getLife()) {
-            killedRobots.push_back(bot);
-        }
-    }
 
-    sort(killedRobots.begin(),killedRobots.end(),compareTimeOfDeath);
+    sort(_robots.begin(),_robots.end(),compareTimeOfDeath);
 
     for(Robot& killedRobot : _robots)
     {
@@ -154,51 +147,39 @@ void BattleRoyal::displayGame() const {
 void BattleRoyal::createNumberOfRobots(const unsigned numberOfRobots) {
     for(unsigned i = 0; i< numberOfRobots; ++i)
     {
-        Robot bot(i);
+        Robot bot;
         this->_robots.push_back(bot);
     }
 }
-int BattleRoyal::getBotWithSamePosition(const Robot& bot) {
 
-    for(const Robot& r : _robots) {
-        if(r.getID() != bot.getID() and r.getLife() and r.getPositionX() == bot.getPositionX() and r.getPositionY() == bot.getPositionY()) {
-           return (int)r.getID();
-        }
-    }
+class RobotSamePosition {
+public :
+    explicit RobotSamePosition(const Robot& bot): _bot(bot){};
+    bool operator()(const Robot& other);
+private :
+    const Robot& _bot;
+};
 
-    return -1;
+bool RobotSamePosition::operator()(const Robot &other) {
+    return _bot.getPositionX() == other.getPositionX() and _bot.getPositionY() == other.getPositionY()
+    and _bot.getID() != other.getID() and other.getLife();
 }
 
 void BattleRoyal::moveRobots(){
     for(Robot& bot : _robots)
     {
-        // Check if the bot is still alive
        if(bot.getLife())
        {
            bot.move(_t.getWidth(),_t.getHeight());
-           int botToKill;
 
-           botToKill = getBotWithSamePosition(bot);
+           auto it = find_if(_robots.begin(),_robots.end(), RobotSamePosition(bot));
+           if(it != _robots.end()) {
 
-           if(botToKill != -1) {
-               killRobot(bot.getID(),(unsigned)botToKill);
+               Robot& botToKill = *it;
+               botToKill.kill(bot.getID());
+               _playersLeft--;
            }
        }
     }
 }
 
-
-void BattleRoyal::killRobot(const unsigned killerId, const unsigned killedId) {
-
-    for(Robot& bot : _robots)
-    {
-        if(killedId == bot.getID())
-        {
-            bot.setLife(false);
-            bot.setRobotKilledBy(killerId);
-            bot.setTimeOfDeath(chrono::system_clock::now());
-            _playersLeft --;
-            break;
-        }
-    }
-}

@@ -1,9 +1,9 @@
 /*
   -------------------------------------------------------------------------------------------------------------------
-  Fichier     :
+  Fichier     : Terrain.h
   Nom du labo : Labo 07 - Robots
-  Auteur(s)   : Rayburn Nathan
-  Date        :
+  Auteur(s)   : Rayburn Nathan, Besia Flavien
+  Date        : 13.12.2022
   But         :
 
   Remarque(s) : RAS
@@ -11,18 +11,16 @@
   Compilateur : Mingw-w64 g++ 12.2.0
   -------------------------------------------------------------------------------------------------------------------
 */
+
 #ifndef PRG1_TERRAIN_H
 #define PRG1_TERRAIN_H
 
-#include <vector>
 #include "Robot.h"
-using namespace std;
 
 class Terrain {
 public:
     // constructors
     Terrain();
-    Terrain(unsigned getWidth, unsigned height);
 
     // accessors
 

@@ -1,9 +1,9 @@
 /*
   -------------------------------------------------------------------------------------------------------------------
-  Fichier     :
+  Fichier     : BattleRoyal.h
   Nom du labo : Labo 07 - Robots
-  Auteur(s)   : Rayburn Nathan
-  Date        :
+  Auteur(s)   : Rayburn Nathan, Besia Flavien
+  Date        : 13.12.2022
   But         :
 
   Remarque(s) : RAS
@@ -32,17 +32,15 @@ private:
     // attributes
     Terrain _t;
     unsigned _playersLeft{};
-    vector<Robot> _robots;
+    std::vector<Robot> _robots;
 
 
     // methods
-    int getBotWithSamePosition(const Robot& bot);
     void killLog();
     void displayGame() const;
     void placeRobotsInGame();
     void createNumberOfRobots(unsigned numberOfRobots);
     void moveRobots();
-    void killRobot(unsigned id, unsigned idToKill);
     unsigned getWinner();
 
 };

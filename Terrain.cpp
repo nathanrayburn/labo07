@@ -1,9 +1,9 @@
 /*
   -------------------------------------------------------------------------------------------------------------------
-  Fichier     :
+  Fichier     : Terrain.cpp
   Nom du labo : Labo 07 - Robots
-  Auteur(s)   : Rayburn Nathan
-  Date        :
+  Auteur(s)   : Rayburn Nathan, Besia Flavien
+  Date        : 13.12.2022
   But         :
 
   Remarque(s) : RAS

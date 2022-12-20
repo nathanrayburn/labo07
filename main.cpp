@@ -1,22 +1,23 @@
 /*
   -------------------------------------------------------------------------------------------------------------------
-  Fichier     :
+  Fichier     : main.cpp
   Nom du labo : Labo 07 - Robots
-  Auteur(s)   : Rayburn Nathan
-  Date        :
-  But         :
+  Auteur(s)   : Rayburn Nathan, Besia Flavien
+  Date        : 13.12.2022
+  But         : simuler des robots autonomes dans un espaces donné. L’utilisateur est invité à saisir
+                les dimensions (X, Y) et le nombres de robots [1, 10].
 
   Remarque(s) : RAS
 
   Compilateur : Mingw-w64 g++ 12.2.0
   -------------------------------------------------------------------------------------------------------------------
 */
+
 #include <iostream>
 #include "userInterface.h"
 #include "BattleRoyal.h"
 
 using namespace std;
-
 
 int main() {
 
@@ -43,9 +44,8 @@ int main() {
     if(battle.startGame(numberOfRobots)){
 
     }else {
-        cout << "Couldn't start the game" << endl;
+        cout << "Impossible de lancer le jeu" << endl;
     }
-
 
     return 0;
 }
