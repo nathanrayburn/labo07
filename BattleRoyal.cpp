@@ -130,39 +130,45 @@ void BattleRoyal::killLog() {
 void BattleRoyal::displayGame() const {
 
 
-    unsigned limitX = _terrainWidth + 1;
-    unsigned limitY = _terrainHeight + 1;
+    unsigned limitX = _terrainWidth;
+    unsigned limitY = _terrainHeight;
+    // top
+    cout << "-";
+    for (unsigned col = 0; col < limitY; col++) {
+        cout << "-";
+    }
+    cout << endl;
 
-    for (unsigned row = 0; row <= limitX; row++) {
 
+    for (unsigned row = 0; row < limitX; row++) {
 
-        for (unsigned col = 0; col <= limitY; col++) {
+        cout << "|";
+
+        for (unsigned col = 0; col < limitY; col++) {
 
             bool foundRobot = false;
-            if (row == 0 or row == limitX) {
-                cout << "-";
-            } else if (col == 0 or col == limitY) {
-                cout << "|";
-            } else {
+            for (const Robot& bot : _robots) {
+                if (bot.getPositionX() == row && bot.getPositionY() == col and bot.getLife()) {
 
-                for (const Robot &bot: _robots) {
-                    if (bot.getPositionX() == row && bot.getPositionY() == col and bot.getLife()) {
-
-                        cout << bot.getID();
-                        foundRobot = true;
-                        break;
-                    }
-                }
-
-                if (!foundRobot) {
-                    cout << " ";
+                    cout << bot.getID();
+                    foundRobot = true;
+                    break;
                 }
             }
 
+            if (!foundRobot) {
+                cout << " ";
+            }
         }
 
-        cout << endl;
+        cout << "|" << endl;
     }
+    // bottom
+    cout << "-";
+    for (unsigned col = 0; col < limitY; col++) {
+        cout << "-";
+    }
+    cout << endl;
 }
 
 void BattleRoyal::createNumberOfRobots(const unsigned numberOfRobots) {

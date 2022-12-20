@@ -61,12 +61,6 @@ build CMakeFiles/prg1.dir/Robot.cpp.obj: CXX_COMPILER__prg1_Debug C$:/Users/nath
   OBJECT_DIR = CMakeFiles\prg1.dir
   OBJECT_FILE_DIR = CMakeFiles\prg1.dir
 
-build CMakeFiles/prg1.dir/Terrain.cpp.obj: CXX_COMPILER__prg1_Debug C$:/Users/natha/Documents/HEIG-VD/labo07/Terrain.cpp || cmake_object_order_depends_target_prg1
-  DEP_FILE = CMakeFiles\prg1.dir\Terrain.cpp.obj.d
-  FLAGS = -g -std=gnu++14
-  OBJECT_DIR = CMakeFiles\prg1.dir
-  OBJECT_FILE_DIR = CMakeFiles\prg1.dir
-
 build CMakeFiles/prg1.dir/userInterface.cpp.obj: CXX_COMPILER__prg1_Debug C$:/Users/natha/Documents/HEIG-VD/labo07/userInterface.cpp || cmake_object_order_depends_target_prg1
   DEP_FILE = CMakeFiles\prg1.dir\userInterface.cpp.obj.d
   FLAGS = -g -std=gnu++14
@@ -93,7 +87,7 @@ build CMakeFiles/prg1.dir/BattleRoyal.cpp.obj: CXX_COMPILER__prg1_Debug C$:/User
 #############################################
 # Link the executable prg1.exe
 
-build prg1.exe: CXX_EXECUTABLE_LINKER__prg1_Debug CMakeFiles/prg1.dir/main.cpp.obj CMakeFiles/prg1.dir/Robot.cpp.obj CMakeFiles/prg1.dir/Terrain.cpp.obj CMakeFiles/prg1.dir/userInterface.cpp.obj CMakeFiles/prg1.dir/annex.cpp.obj CMakeFiles/prg1.dir/BattleRoyal.cpp.obj
+build prg1.exe: CXX_EXECUTABLE_LINKER__prg1_Debug CMakeFiles/prg1.dir/main.cpp.obj CMakeFiles/prg1.dir/Robot.cpp.obj CMakeFiles/prg1.dir/userInterface.cpp.obj CMakeFiles/prg1.dir/annex.cpp.obj CMakeFiles/prg1.dir/BattleRoyal.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\prg1.dir
