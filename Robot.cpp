@@ -39,23 +39,25 @@ vector<Directions> Robot::getAvailableDirections(const unsigned limitX, const un
 }
 void Robot::move(const unsigned limitX, const unsigned limitY)
 {
-    vector<Directions> availableDirections = getAvailableDirections(limitX,limitY);
+    if(_isAlive) {
+        vector<Directions> availableDirections = getAvailableDirections(limitX,limitY);
 
-    Directions randomDirectionToMove = availableDirections.at(createRandomValue((int)availableDirections.size()-1));
+        Directions randomDirectionToMove = availableDirections.at(createRandomValue((int)availableDirections.size()-1));
 
-    switch (randomDirectionToMove) {
-        case Directions::UP:
-            _y-- ;
-            break;
-        case Directions::DOWN:
-            _y++ ;
-            break;
-        case Directions::RIGHT:
-            _x++ ;
-            break;
-        case Directions::LEFT:
-            _x-- ;
-            break;
+        switch (randomDirectionToMove) {
+            case Directions::UP:
+                _y-- ;
+                break;
+            case Directions::DOWN:
+                _y++ ;
+                break;
+            case Directions::RIGHT:
+                _x++ ;
+                break;
+            case Directions::LEFT:
+                _x-- ;
+                break;
+        }
     }
 }
 bool Robot::getLife() const {

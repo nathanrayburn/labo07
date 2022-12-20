@@ -19,6 +19,14 @@
 
 using namespace  std;
 
+class RobotSamePosition {
+public :
+    explicit RobotSamePosition(const Robot& bot): _bot(bot){};
+    bool operator()(const Robot& other);
+private :
+    const Robot& _bot;
+};
+
 BattleRoyal::BattleRoyal(unsigned terrainWidth, unsigned terrainHeight) {
     _t.setHeight(terrainHeight);
     _t.setWidth(terrainWidth);
@@ -39,7 +47,7 @@ bool BattleRoyal::startGame(unsigned numberOfRobots) {
         moveRobots();
         displayGame();
         killLog();
-        this_thread::sleep_for(50ms);
+        this_thread::sleep_for(200ms);
     }
 
     // display winner
@@ -152,34 +160,26 @@ void BattleRoyal::createNumberOfRobots(const unsigned numberOfRobots) {
     }
 }
 
-class RobotSamePosition {
-public :
-    explicit RobotSamePosition(const Robot& bot): _bot(bot){};
-    bool operator()(const Robot& other);
-private :
-    const Robot& _bot;
-};
+
 
 bool RobotSamePosition::operator()(const Robot &other) {
     return _bot.getPositionX() == other.getPositionX() and _bot.getPositionY() == other.getPositionY()
-    and _bot.getID() != other.getID() and other.getLife();
+    and _bot.getID() != other.getID() and other.getLife() and _bot.getLife();
 }
 
 void BattleRoyal::moveRobots(){
     for(Robot& bot : _robots)
     {
-       if(bot.getLife())
-       {
-           bot.move(_t.getWidth(),_t.getHeight());
 
-           auto it = find_if(_robots.begin(),_robots.end(), RobotSamePosition(bot));
-           if(it != _robots.end()) {
+       bot.move(_t.getWidth(),_t.getHeight());
 
-               Robot& botToKill = *it;
-               botToKill.kill(bot.getID());
-               _playersLeft--;
-           }
+       auto it = find_if(_robots.begin(),_robots.end(), RobotSamePosition(bot));
+       if(it != _robots.end()) {
+           Robot& botToKill = *it;
+           botToKill.kill(bot.getID());
+           _playersLeft--;
        }
+
     }
 }
 
